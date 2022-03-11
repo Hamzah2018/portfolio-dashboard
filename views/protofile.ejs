@@ -1,0 +1,64 @@
+<%- include('./dashpartails/header.ejs'); -%>
+<%- include('./dashpartails/bar.ejs'); -%>
+<!-- Button trigger modal -->
+<main class="container justify-content-center">
+<div class="card col-3 m-5" style="width: 18rem;">
+    <img src="/images/imges/profile.png" class="card-img-top img-fluid" alt="...">
+    <div class="card-body">
+        <div>
+            <h3>Hamzah Ismail</h3>
+            <p class="card-text">Full-Stuck Developer 7 Years working in Amazion.</p>
+        </div>
+        <button type="button" class="btn btn-outline-dark m-5 justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Manage Your Profile
+         </button>
+         
+         <!-- Modal -->
+         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">Person NAME</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                 <img src="/images/imges/profile.png" alt="">
+                 <form action="/add_person" method="post" >
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1"  class="form-label">Full Name</label>
+                      <input type="text" placeholder="hamzah" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namep">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="profile" class="form-label">Protfile Text</label>          
+                        <input type="text" placeholder="Pargraph" class="form-control" id="profile" name="profile_desc">
+                      </div>
+                      <div class="mb-3">                                                     
+                        <label for="example" class="form-label">Image</label>
+                        <input type="text" placeholder="Pargraph" class="form-control" id="example" name="pro_image">
+                      </div>
+                    <!-- <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div> -->
+                    <!-- <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> -->
+                    <button type="submit" class="btn btn-primary" value="save">New</button>
+                  </form>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-primary">Edite</button>
+                 <button type="button" class="btn btn-danger">Delete</button>
+                 <button type="button" class="btn btn-primary">Save</button>
+                 <a class="btn " href="experience.html"> >>> </a>
+               </div>
+             </div>
+           </div>
+         </div>
+    </div>
+  </div>
+</main>
+<%- include('./dashpartails/footer.ejs'); -%>
