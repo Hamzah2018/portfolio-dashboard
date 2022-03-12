@@ -23,7 +23,7 @@
                </div>
                <div class="modal-body">
                  <img src="/images/imges/profile.png" alt="">
-                 <form action="/add_person" method="post" >
+                 <form action="/add_person" method="post" enctype="multipart/form-data" >
                     <div class="mb-3">
                       <label for="exampleInputEmail1"  class="form-label">Full Name</label>
                       <input type="text" placeholder="hamzah" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="namep">
@@ -31,11 +31,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="profile" class="form-label">Protfile Text</label>          
-                        <input type="text" placeholder="Pargraph" class="form-control" id="profile" name="profile_desc">
-                      </div>
+                        <!-- <textarea type="text" placeholder="Pargraph" class="form-control" id="profile" > -->
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="profile_desc"></textarea>
+                        </div>
                       <div class="mb-3">                                                     
                         <label for="example" class="form-label">Image</label>
-                        <input type="text" placeholder="Pargraph" class="form-control" id="example" name="pro_image">
+                        <input type="file" placeholder="Pargraph" class="form-control" id="example" name="pro_image">
                       </div>
                     <!-- <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
