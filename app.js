@@ -7,10 +7,9 @@ var logger = require('morgan');
 const db = require('./config/db');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const Person = require('./models/person.js');
 var app = express();
 app.use(express.json());
-
+const portDashRouter = require('./routes/portodash');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 
@@ -24,41 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
-app.use(express.urlencoded())
-app.get('/protofile',auth,(req,res)=>{
-    // req.query.role
-    res.render('protofile');
-});
-app.get("/add_person", auth, (req, res) => {
-  res.render("protofile");
-});
-app.post('/add_person',auth,(req,res)=>{
-    const p = new Person(
-      {
-          name: req.body.namep,
-          portfileText:req.body.profile_desc,
-          portfileImage:req.body.pro_image
-      }   
-    )
-    p.save((error,result)=>{
-      if(error)
-     console.log(error.message);
-      else
-      console.log(result);});
-      console.log("data inserted successful");
-    res.end();
-//    res.render("user_info", { info: req.body });
-//  console.log(req.body);
-// res.render('protofile')
-    // res.end();
-});
-
-function auth(req,res,next){
-    next();
-}
-
-
+app.use(portDashRouter);
+app.use(express.urlencoded());
 // app.get('/person/add','auth',(req,res)=>{
 //   res.render('protofile');
 // });
